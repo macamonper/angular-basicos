@@ -1,0 +1,25 @@
+<!-- las directivas se escriben *ng Y el metodo -->
+
+<p>listado de heroes</p>
+
+<ul>
+    <li *ngFor=" let heroe of heroes , let i = index">
+{{i}}-{{heroe}}
+    </li> 
+</ul>
+
+<button (click)="borrarHeroe()">borrar heroe</button>
+
+
+<!--*ngIf ="condicion; else condicion" si esto no exista, mostra ese template-->
+<div *ngIf="heroeBorrado;else noBorrado">
+    <h3>Heroe borrado</h3>
+    <h2>{{heroeBorrado}}</h2>
+</div>
+
+<!--la referencia local no es algo que exista en el lado de componente-->
+ <ng-template #noBorrado>
+     <h3>No ha borrado nada</h3>
+</ng-template>
+
+
