@@ -1,0 +1,20 @@
+ <h3 class="border">Agregar</h3>
+    <!-- para recibir el evento que se esta disparando hay que ponerlo entre
+        los parentesis y llamarlo con $event -->
+
+    <form (ngSubmit)="agregar()">
+      <!--con el ngSubmit usas los metodos de angular para los forms. 
+        en este caso se aplica el prevent default-->
+
+      <!--SE PUEDE HACER ASI PERO MEJOR HACERLO CON NG MODEL
+
+         <input type="text" placeholder="Nombre" [value]="nuevo.nombre" (input)="cambiarNombre($event)"/>
+
+    con [value] enlazamos el valor del input con el valor del objeto
+    con el (input) decimos que se enlace cuando pasa el evento -->
+
+      <input type="text" placeholder="Nombre" name="nombre" [(ngModel)]="nuevo.nombre" />
+      <input type="text" placeholder="Poder" name="poder" [(ngModel)]="nuevo.poder" />
+
+      <button type="submit">Agregar <small>{{nuevo.nombre}}</small></button>
+    </form>
